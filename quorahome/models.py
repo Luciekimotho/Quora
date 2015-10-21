@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Question(models.Model):
     question = models.TextField('question')
-    date_posted = models.DateTimeField('date posted')
+    date_posted = models.DateTimeField('date posted', auto_now = False, auto_now_add=True)
 
     def __str__(self):
         return self.question
@@ -11,7 +11,7 @@ class Question(models.Model):
 class Answer(models.Model):
     question = models.ForeignKey(Question)
     answer = models.TextField('answer')
-    date_answered = models.DateTimeField('date answered')
+    date_answered = models.DateTimeField('date answered', auto_now = False, auto_now_add=True)
 
     def __str__(self):
         return self.answer

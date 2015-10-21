@@ -20,8 +20,9 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-     url(r'^questions/$', 'quorahome.views.questions', name='questions'),
+    url(r'^questions/$', 'quorahome.views.questions', name='questions'),
+    url(r'^$', 'quorahome.views.home', name='home'),
 
-     url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
 
 ]

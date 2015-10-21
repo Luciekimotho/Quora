@@ -7,3 +7,7 @@ def questions(request):
     questions = Question.objects.all()
     context = {'questions':questions}
     return render(request, 'questions.html', context)
+
+def home(request):
+    context = {}
+    return render(request, 'quorahome.html', context)
