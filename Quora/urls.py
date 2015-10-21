@@ -21,6 +21,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^questions/$', 'quorahome.views.questions', name='questions'),
+
+    url(r'^view/(?P<pk>[0-9]+)/', 'quorahome.views.viewquestion', name='viewquestion'),
+
     url(r'^$', 'quorahome.views.home', name='home'),
 
     url(r'^admin/', include(admin.site.urls)),
