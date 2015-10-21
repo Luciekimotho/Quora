@@ -2,5 +2,23 @@
 <ul>
 {% for each in questions %}
      <li>{{each.question}} <br>{{each.date_posted}}<br></li>
+
+
+    {% if question.answers_set.all %}
+        <h2>Comments</h2>
+        {% for each in questions.answers_set.all %}
+             {{each.answer}}
+        {% endfor %}
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Answer">
+        <p>
+            {{ form.as_p}}
+        </p>
+    </form>
+
 {% endfor %}
+
+
 </ul>
