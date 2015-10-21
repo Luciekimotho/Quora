@@ -1,7 +1,8 @@
 <html>
 Welcome to Quora
 
-<form action="" method="post">
+<form action="" method="post" accept-charset="utf-8">
+{% csrf_token %}
     {{ form.as_p }}
    <p><input type="submit" value="Post question"></p>
 </form>
