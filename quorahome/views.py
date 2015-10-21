@@ -4,5 +4,6 @@ from .models import Question
 # Create your views here.
 
 def questions(request):
-    context = {}
+    questions = Question.objects.all()
+    context = {'questions':questions}
     return render(request, 'questions.html', context)
