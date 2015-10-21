@@ -21,7 +21,6 @@ def home(request):
     return render(request, 'quorahome.html', context)
 
 def viewquestion(request, pk):
-    Question.objects.get(pk=pk)
     questions = get_object_or_404(Question, pk=pk)
     context = {
         'questions':questions

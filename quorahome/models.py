@@ -9,8 +9,8 @@ class Question(models.Model):
         return self.question
 
 class Answer(models.Model):
-    question = models.ForeignKey(Question)
-    answer = models.TextField('answer')
+    thequestion = models.ForeignKey('Question', related_name='answer')
+    answer = models.TextField()
     date_answered = models.DateTimeField('date answered', auto_now = False, auto_now_add=True)
 
     def __str__(self):
