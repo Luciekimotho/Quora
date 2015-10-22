@@ -1,10 +1,13 @@
 
 <h3>{{ questions.question }}</h3>
 <hr>
-<p>{% for each in question.answer.all %}
-    {{ each.answer}}
+
+<p>{% for answer in answers.all %}
+    {{ answer.answer}}
+    {{ answer.date_answered }}
 </p>
-<p>lol</p>
-{% endfor %}
+      {% empty %}
+       <p>No answer yet</p>
+   {% endfor %}
 
 
