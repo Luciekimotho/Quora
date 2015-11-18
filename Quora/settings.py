@@ -106,7 +106,16 @@ STATICFILES_DIRS = ( os.path.join(BASE_DIR), 'static', )
 
 
 import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'NAME': 'dfjsj4vm0q4fa6',
+        'HOST': 'ec2-54-83-199-54.compute-1.amazonaws.com',
+        'PORT': '5432',                    
+        'USER': 'gavfayaceapjfq',
+        'PASSWORD': '_4XHI5kDJMRX85_BZ-xUMIoi6N',                             
+    }
+}
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
