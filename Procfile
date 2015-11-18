@@ -1,0 +1,1 @@
+web: gunicorn Quora.wsgi --log-file -
