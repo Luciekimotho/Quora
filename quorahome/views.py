@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponse
 from .models import Question, Answer
 from .forms import QuestionForm, AnswerForm
+import datetime
 # Create your views here.
 
 def home(request):
@@ -28,3 +29,8 @@ def viewquestion(request, pk):
         'answers':answers
     }
     return render(request, 'viewquestion.html', context)
+
+def current_time(request):
+    now = datetime.datetime.now()
+    html = "<html> <body> It is now %s </body> </html>" %now
+    return HttpResponse(html)
