@@ -28,6 +28,6 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^time/, current_time),
+    url(r'^time/$', 'quorahome.views.current_time'),
 
 ]
